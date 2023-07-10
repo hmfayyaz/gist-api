@@ -1,0 +1,15 @@
+.header {
+    padding: 20px;
+    background-color: #24292e;
+}
+.topheader {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.topheader span.mega-octicon.octicon-mark-github {
+    color: white;
+}
+.topheader form.searchform {
+    width: 340px;
+}

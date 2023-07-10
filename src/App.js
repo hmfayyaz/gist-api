@@ -1,20 +1,22 @@
+import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import SearchAndResults from './app/screens/searchandresults';
+import GistDetails from './app/screens/gistdetails';
 
-import styled from 'styled-components'
-import Header from "./components/Header";
-import GlobalStyles from "./GlobalStyle";
-
-const App = () => {
-  return (
-    <Wrapper className="App" data-testid="app">
-      <Header />
-      <GlobalStyles />
-    </Wrapper>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Route path="/" exact={true} component={SearchAndResults} />
+          <Route path="/:id" component={GistDetails} />
+        </div>
+      </Router>
+    );
+  }
 }
-
-const Wrapper = styled.div`
-  font-size: 14px;
-  line-height: 1.5;
-`;
 
 export default App;
