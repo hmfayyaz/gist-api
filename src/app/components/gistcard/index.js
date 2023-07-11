@@ -19,7 +19,7 @@ export default class GistCard extends PureComponent {
                         </div>
                         <div className='list'>
                             <ul>
-                                <li><Octicon name="code" mega /> <p className="text-secondary">{noOfFiles} {(noOfFiles > 1) ? 'Files' : 'File'}</p></li>
+                                <li><Octicon name="code" mega /> {noOfFiles} {(noOfFiles > 1) ? 'Files' : 'File'}</li>
                                 <li><Octicon name="repo-forked" mega /> Forks</li>
                                 <li><Octicon name="comment" mega /> Comments</li>
                                 <li><Octicon name="star" mega /> Stars</li>
