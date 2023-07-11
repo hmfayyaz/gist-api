@@ -9,6 +9,13 @@ export default class GistCard extends PureComponent {
     render() {
         const { gistData } = this.props;
         const noOfFiles = Object.keys(gistData.files).length;
+
+        splitDate = (dateString) => {
+            var dateString = "2013-09-01 16:20";
+            let split = dateString.split('T');
+            return split[0];
+        }
+
         return (
             <Link to={{ pathname: `/${gistData.id}`, state: { description: gistData.description, files: gistData.files } }}>
                 <li className="list-row">
@@ -28,9 +35,9 @@ export default class GistCard extends PureComponent {
                     </div>
                     <ul className='dates'>
                         <li>
-                            Created at: {gistData.created_at}
+                            Created at: {this.splitDate(gistData.created_at)}
                         </li>
-                        <li>Last updated: {gistData.updated_at}</li>
+                        <li>Last updated: {this.splitDate(gistData.updated_at)}</li>
                     </ul>
 
 
