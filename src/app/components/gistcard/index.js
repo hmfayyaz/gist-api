@@ -6,15 +6,16 @@ import Badge from '../badge';
 import Octicon from 'react-octicon';
 
 export default class GistCard extends PureComponent {
+    splitDate = (dateString) => {
+
+        let split = dateString.split('T');
+        return split[0];
+    }
     render() {
         const { gistData } = this.props;
         const noOfFiles = Object.keys(gistData.files).length;
 
-        splitDate = (dateString) => {
-            var dateString = "2013-09-01 16:20";
-            let split = dateString.split('T');
-            return split[0];
-        }
+
 
         return (
             <Link to={{ pathname: `/${gistData.id}`, state: { description: gistData.description, files: gistData.files } }}>
